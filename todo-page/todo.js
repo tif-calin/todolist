@@ -1,4 +1,5 @@
 import { getUser } from '../local-storage.js';
+import { makeTask } from '../utils-dom.js';
 
 const form = document.querySelector('#make-task');
 const taskList = document.querySelector('#todo-list');
@@ -15,4 +16,12 @@ form.addEventListener('submit', (e) => {
     };
 
     user.tasks.push(newTask);
+
+    taskList.innerHTML = '';
+    for (let task of user.tasks) {
+        const listItem = makeTask(task);
+        taskList.appendChild(listItem);
+    }
+
+    form.reset();
 });

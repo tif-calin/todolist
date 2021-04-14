@@ -21,7 +21,7 @@ submit.addEventListener('submit', (e) => {
         const user = {
             name: username,
             password: password,
-            task: []
+            tasks: []
         };
     
         setUser(user);
