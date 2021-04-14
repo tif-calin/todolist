@@ -11,7 +11,7 @@ submit.addEventListener('submit', (e) => {
     const password = formData.get('password');
 
     if (getUser().name === username) { 
-        if (getUser().pass === password) {
+        if (getUser().password === password) {
             logIn(username);
         } 
         return false;
