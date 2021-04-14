@@ -7,8 +7,8 @@ export function setUser(user) {
 
 export function getUser() {
     const stringyUser = localStorage.getItem(USER);
-    const user = JSON.parse(stringyUser);
-    return user;
+    if (stringyUser) return JSON.parse(stringyUser);
+    else return {};
 }
 
 const LOGGEDIN = 'LOGGED-IN';

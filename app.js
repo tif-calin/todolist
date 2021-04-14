@@ -13,13 +13,15 @@ submit.addEventListener('submit', (e) => {
     if (getUser().name === username) { 
         if (getUser().password === password) {
             logIn(username);
-        } 
-        return false;
+        } else {
+            console.log('Wrong pass');
+            return false;
+        }
     } else { 
         const user = {
             name: username,
             password: password,
-            task: []
+            tasks: []
         };
     
         setUser(user);
