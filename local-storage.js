@@ -28,7 +28,7 @@ export function getUser(username) {
 
     // return the user or an empty object if there's no user
     if (user) return user;
-    else return null;
+    else return {};
 }
 
 export function getLoggedIn() {
