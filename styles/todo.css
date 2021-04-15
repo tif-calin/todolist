@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
-main {
+#main-section {
+    border: 2px solid #919F89;
+    width: 600px;
+    border-radius: 10px;
     font-size: 1rem;
-
+    background-color: #E2B8AC;
 }
 
 .completed-task {
@@ -10,23 +13,68 @@ main {
 }
 
 li:hover {
-    background-color: #E2B8AC;
+    background-color: #919F89;
+    font-weight: bolder;
+    opacity: 0.9;
+}
+
+li {
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.6;
+    padding: 0.25rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 2px #98A7Ac;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+ul {
+    width: 100%;
+    margin-top: 1rem;
+    font-family: "Indie Flower", cursive;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    margin-top: 20px;
+    background-color: #919F89;
+    color: #E2B8AC;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #E2B8AC;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #919F89;
+    width: 120px;
+    height: 50px;
+    color: #E2B8AC;
+    font-size: 20px;
+    border-radius: 5px;
     font-weight: bolder;
 
 }
 
-
-li {
-    width: 100%;
-    /* transition: cubic-bezier(0.165, 0.84, 0.44, 1); */
-    text-align: center;
+input {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #919F89;
+    color: white;
+    border: 1px solid white;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 
-ul {
-    /* width: 100%; */
-    margin-top: 1rem;
-    font-family: "Indie Flower", cursive;
-    border: 2px solid #919F89;
-    padding: 10px;
-    color: #484a4b;
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    text-align: center;
+    color: white;
 }
