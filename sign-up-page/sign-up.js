@@ -9,7 +9,7 @@ signUpForm.addEventListener('submit', (e) => {
     const username = formData.get('name');
     const password = formData.get('password');
 
-    if (getUser().name === username) {
+    if (getUser(username).name === username) {
         alert('user already exist');
     } else { 
         const user = {
