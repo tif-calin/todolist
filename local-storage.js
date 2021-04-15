@@ -27,7 +27,8 @@ export function getUser(username) {
     const user = users[username];
 
     // return the user or an empty object if there's no user
-    return user;
+    if (user) return user;
+    else return null;
 }
 
 export function getLoggedIn() {
