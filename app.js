@@ -9,12 +9,23 @@ submit.addEventListener('submit', (e) => {
     const username = formData.get('name');
     const password = formData.get('password');
 
+
     if (!getUser(username).name) {
         console.log('No such user exists!');
     } else if (getUser(username).password === password) { 
+
         logIn(username);
         window.location = './todo-page';
     } else {
         console.log('Wrong password!');
     }
+
+});
+
+const createAccountButton = document.getElementById('create-account');
+
+createAccountButton.addEventListener('click', () => {
+
+    window.location = './sign-up-page';
+
 });
