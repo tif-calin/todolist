@@ -18,13 +18,22 @@ export function logIn(username) {
 }
 
 
-export function completeTask(taskToComplete, user){
+export function completeTask(taskToCompleteId, user){
     // const user = getUser();
-    const matchingTask = user.tasks.find((task) => task.task === taskToComplete);
-
+    
+    const matchingTask = user.tasks.find((task) => task.id === taskToCompleteId);
     matchingTask.isComplete = true;
-    console.log(matchingTask);
-    // setUser(user);
+    
+
+    setUser(user);
 
 
+}
+
+
+export function undoComplete(taskToCompleteId, user){
+    
+    const matchingTask = user.tasks.find((task) => task.id === taskToCompleteId);
+    matchingTask.isComplete = false;
+    setUser(user);
 }

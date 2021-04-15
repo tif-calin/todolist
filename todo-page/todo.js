@@ -1,4 +1,4 @@
-import { completeTask, getUser, setUser } from '../local-storage.js';
+import { completeTask, undoComplete, getUser, setUser } from '../local-storage.js';
 import { makeTask } from '../utils-dom.js';
 
 const form = document.querySelector('#make-task');
@@ -11,6 +11,7 @@ form.addEventListener('submit', (e) => {
     user = getUser();
     const formData = new FormData(form);
     const newTask = {
+        id: user.tasks.length,
         task: formData.get('write-task'),
         isComplete: false
     };
@@ -30,10 +31,15 @@ function renderTasks(user) {
     for (let task of user.tasks) {
         const listItem = makeTask(task);
         listItem.addEventListener('click', () => {
-            completeTask(task.task, user);
-            setUser(user);
-            listItem.classList.add('completed-task');
-            // listItem.disabled = true;
+            if (!task.isComplete){
+                completeTask(task.id, user);
+                listItem.classList.add('completed-task');
+            } else {
+                undoComplete(task.id, user);
+                listItem.classList.remove('completed-task');
+            }
+            
+           
             
         });
         taskList.appendChild(listItem);
