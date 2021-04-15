@@ -40,9 +40,25 @@ export function logIn(username) {
     localStorage.setItem(LOGGEDIN, username);
 }
 
-export function completeTask(taskToComplete, user){
-    const matchingTask = user.tasks.find((task) => task.task === taskToComplete);
 
+
+export function completeTask(taskToCompleteId, user){
+    // const user = getUser();
+    
+    const matchingTask = user.tasks.find((task) => task.id === taskToCompleteId);
     matchingTask.isComplete = true;
-    console.log(matchingTask);
+    
+
+    setUser(user);
+
+
+}
+
+
+export function undoComplete(taskToCompleteId, user){
+    
+    const matchingTask = user.tasks.find((task) => task.id === taskToCompleteId);
+    matchingTask.isComplete = false;
+    setUser(user);
+
 }
