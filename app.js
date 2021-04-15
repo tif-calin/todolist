@@ -25,10 +25,18 @@ submit.addEventListener('submit', (e) => {
         };
     
         setUser(user);
-        
+
         logIn(username);
     }
 
     window.location = './todo-page';
+
+});
+
+const createAccountButton = document.getElementById('create-account');
+
+createAccountButton.addEventListener('click', () => {
+
+    window.location = './sign-up-page';
 
 });
