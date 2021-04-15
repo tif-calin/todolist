@@ -1,14 +1,16 @@
-import { completeTask, undoComplete, getUser, setUser } from '../local-storage.js';
+import { completeTask, undoComplete, getUser, setUser, getLoggedIn, logIn } from '../local-storage.js';
 import { makeTask } from '../utils-dom.js';
 
 const form = document.querySelector('#make-task');
 const taskList = document.querySelector('#todo-list');
 
-let user = getUser();
+
+let user = getLoggedIn();
+console.log(user);
 renderTasks(user);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    user = getUser();
+    user = getLoggedIn();
     const formData = new FormData(form);
     const newTask = {
         id: user.tasks.length,
@@ -46,3 +48,9 @@ function renderTasks(user) {
 
     }
 }
+
+const signOutButton = document.querySelector('#sign-out');
+signOutButton.addEventListener('click', () => {
+    logIn(null);
+    window.location = '../';
+});

@@ -11,6 +11,7 @@ signUpForm.addEventListener('submit', (e) => {
 
     if (getUser(username).name === username) {
         alert('user already exist');
+        window.location = '../';
     } else { 
         const user = {
             name: username,

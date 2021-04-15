@@ -32,7 +32,8 @@ export function getUser(username) {
 }
 
 export function getLoggedIn() {
-    const loggedIn = getUsers()[LOGGEDIN]
+    const loggedIn = getUsers()[localStorage.getItem(LOGGEDIN)];
+    console.log(loggedIn);
     return loggedIn; // might return undefined
 }
 
